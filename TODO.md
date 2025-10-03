@@ -1,0 +1,6 @@
+- [x] fix css, make chats list scroll when the screen is fulll
+- [ ] refactor code, separate responsabilities
+- [ ] when the chatlist is empty  and a new prompt is sent, the prompt doesn't make request to the api, fix it
+- [ ] Generate new chat title
+- [ ] Streaming response?
+- [ ] vision, analytic functionnality? 

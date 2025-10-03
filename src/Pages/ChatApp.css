@@ -1,0 +1,263 @@
+.chat-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: var(--bg-secondary);
+}
+
+.chat-list {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
+    padding: 0 1rem;
+    overflow-y: scroll;
+}
+
+.chat-list-header {
+    color: var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    min-height: 6rem;
+    font-size: 2rem;
+}
+
+.chat-list-header h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.fa-pen {
+    font-size: 1.5rem;
+}
+
+.chat-list-items {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-list-item {
+    background: var(--bg-secondary);
+    display: flex;
+    width: 100%;
+    min-height: 5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.chat-list-item.active {
+    background: var(--secondary);
+}
+
+.chat-list-item h3 {
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.chat-list-item .fa-trash {
+    font-size: 1.5rem;
+    color: var(--danger);
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.chat-list-item:hover > .fa-trash {
+    visibility: visible;
+}
+
+
+.chat-window {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    min-height: 6rem;
+    background-color: var(--bg);
+}
+
+.chat-title h3 {
+    color: var(--text);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.fa-arrow-right {
+    color: var(--grey);
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.fa-bars, .fa-times {
+    color: var(--grey);
+    font-size: 2rem;
+    display: none;
+}
+
+.chat {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-list-items::-webkit-scrollbar,
+.chat::-webkit-scrollbar,
+.chat-list::-webkit-scrollbar {
+    display: none;
+}
+
+.prompt, .response {
+    max-width: 95%;
+    padding: 2rem;
+    color: var(--text);
+    font-size: 1.6rem;
+    overflow-wrap: anywhere;
+}
+
+span {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--grey);
+    margin-top: 0.5rem;
+}
+
+.prompt {
+    background: linear-gradient(to bottom right, var(--secondary), var(--tertiary));
+    border-radius: 3rem 0 3rem 3rem;  
+    align-self: flex-end;
+}
+.response {
+    background:/* linear-gradient(to bottom right, var(--grey), var(--secondary));*/ var(--primary);
+    border-radius: 0 3rem 3rem 3rem;  
+    align-self: flex-start;
+}
+
+.typing {
+    margin-top: auto;
+    font-size: 1.4rem;
+    color: var(--grey);
+}
+
+
+.message-form {
+    min-height: 6rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--bg-tertiary);
+    position: relative;
+}
+
+.picker {
+    position: absolute;
+    bottom: 7rem;
+    left: 2rem;
+}
+
+.message-form .fa-smile,
+.message-form .fa-paper-plane {
+    display: flex;
+    justify-content: center;
+    width: 10rem;
+    font-size: 2rem;
+    color: var(--grey);
+    cursor: pointer;
+}
+
+.message-input {
+    height: 5rem;
+    background: var(--bg-tertiary);
+    padding: 1rem;
+    font-size: 1.6rem;
+    flex-grow: 1;
+    color: var(--text);
+    border: none;
+    box-shadow: 0 0 5px var(--primary);
+    border-radius: 0.4rem;
+}
+
+.message-input:focus{
+    box-shadow: 0 0 5px var(--secondary);
+}
+
+@media screen and (max-width: 900px) {
+    .chat-page {
+        flex-direction: column;
+    }
+
+    .chat-list {
+        width: 40%;
+        height: 100%;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+    }
+
+    .chat-list.show {
+        transform: translateX(0);
+    }
+
+    .chat-window {
+        width: 100%;
+    }
+
+    .fa-bars, .fa-times {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .chat-list {
+        width: 60%;
+    }
+}
+
+
+.response h1, .response h2, .response h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.response p {
+    margin: 5px 0;
+}
+
+.response ul, .response ol {
+    margin-left: 20px;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+.response ul li, .response ol li {
+    margin-bottom: 5px;
+}
+
+.response pre {
+    margin: 10px 0;
+    border-radius: 20px;
+    overflow-x: auto; 
+}
+
+.response hr {
+    margin: 25px 0
+}

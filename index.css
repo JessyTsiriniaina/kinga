@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'outfit';
+    src: url('Outfit-VariableFont_wght.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'outfit';
+} 
+
+[data-theme="light"] {
+    --primary: #e0ebeb;
+    --secondary: rgb(150, 189, 166);
+    --tertiary: #98d1a9;
+    --text: rgb(14, 18, 32);
+    --text-secondary: rgb(23, 30, 53);
+    --grey: rgb(94, 99, 95);
+    --bg:  rgb(226, 231, 248); 
+    --bg-secondary:rgb(240, 245, 253) ;  
+    --bg-tertiary: rgb(222, 233, 227);
+    --danger: rgb(167, 117, 117); 
+}
+
+[data-theme="dark"] {
+    --primary: rgb(31, 37, 37);
+    --secondary: rgb(87, 109, 96);
+    --tertiary: rgb(86, 119, 96);
+    --text: #e2e7f8;
+    --text-secondary: #f3f5fc;
+    --grey: rgb(173, 173, 173);
+    --bg: rgb(27, 27, 27);
+    --bg-secondary: rgb(31, 32, 31);
+    --bg-tertiary: rgb(19, 31, 22);
+    --danger: rgb(248, 119, 119);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    background: var(--bg);
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    display: grid;
+    place-items: center;
+}
+
+i {
+    cursor: pointer;
+}
+
+@media  screen and (max-width: 500px) {
+    html {
+        font-size: 55%;
+    }
+}
