@@ -253,8 +253,9 @@ span {
 }
 
 .response pre {
-    margin: 10px 0;
+    margin: 10px auto;
     border-radius: 20px;
+    max-width: calc(100% - 20px);
     overflow-x: auto; 
 }
 
